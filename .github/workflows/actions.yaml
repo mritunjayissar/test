@@ -9,8 +9,9 @@ on:
 jobs:
   plan_and_apply:
     name: Plan and Apply
-    # env:
-    #   TF_VAR_allowed_account_id: ${{ secrets.ALLOWED_ACCOUNT_ID }}
+    env:
+     #TF_VAR_allowed_account_id: ${{ secrets.ALLOWED_ACCOUNT_ID }}
+     key1 : ${{ secrets.DESTROY_INFRA }}
     runs-on: ubuntu-20.04
 
     steps:
@@ -51,7 +52,7 @@ jobs:
           terraform apply -input=false -no-color tfplan          
 
       - name: Destroy Terraform
-        if: {{ secrets.DESTROY_INFRA }} == '0'
+        if: ${{ env.key1 == 0 }}
         id: destroy
         run: |
           cd terraform
