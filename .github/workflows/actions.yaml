@@ -56,4 +56,4 @@ jobs:
         id: destroy
         run: |
           cd terraform
-          terraform destroy 
+          terraform destroy -input=false
