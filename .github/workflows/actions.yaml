@@ -52,7 +52,7 @@ jobs:
           terraform apply -input=false -no-color tfplan          
 
       - name: Destroy Terraform
-        if: ${{ env.key1 == 0 }}
+        if: ${{ env.key1 == 1 }}
         id: destroy
         run: |
           cd terraform
