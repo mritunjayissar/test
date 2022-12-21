@@ -51,7 +51,7 @@ jobs:
           terraform apply -input=false -no-color tfplan          
 
       - name: Destroy Terraform
-        if: ${{ secrets.DESTROY_INFRA }} == '0'
+        if: {{ secrets.DESTROY_INFRA }} == '0'
         id: destroy
         run: |
           cd terraform
