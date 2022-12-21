@@ -10,11 +10,11 @@ terraform {
     }
   }
 
-    #  backend "s3" {
-    #   bucket = "tf-state-05"
-    #   key    = "terraform.state"
-    #   region = "ap-south-1"
-    # }
+     backend "s3" {
+      bucket = "terra-mri-state"
+      key    = "terraform.state"
+      region = "ap-south-1"
+    }
 
 }
 
